@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:text="Title"
+        android:textColor="@color/colorPrimary"
+        app:fontFamily="@font/crimson_text_bold"
+        style="@style/emphasisText" />
+
+    <TextView
+        android:id="@+id/author"
+        style="@style/emphasisText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:text="Written by Author's Name"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/narrator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/author"
+        android:text="Narrated by Narrator's Name"
+        android:textSize="14sp"
+        app:fontFamily="@font/crimson_text_italic" />
+
+    <TextView
+        android:id="@+id/length"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/author"
+        android:text="Narration Length: 12:00:00"
+        android:textSize="14sp"
+        app:fontFamily="@font/crimson_text_italic" />
+
+
+
+</RelativeLayout>
