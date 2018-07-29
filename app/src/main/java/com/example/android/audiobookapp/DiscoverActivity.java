@@ -2,6 +2,7 @@ package com.example.android.audiobookapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -17,18 +18,16 @@ public class DiscoverActivity  extends AppCompatActivity {
 
         //Add book items to list
         bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Memoirs of Sherlock Holmes","Run Time: 7:33:20","Sir Arthur Conan Doyle","Eric Leach"));
-        bookItems.add(new AudioBooksOption("The Return of Sherlock Holmes","Run Time: 11:51:17","Sir Arthur Conan Doyle","David Clarke"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
+        bookItems.add(new AudioBooksOption("The Memoirs of Sherlock Holmes","Run Time: 7:33:20","Sir Arthur Conan Doyle","Narrated by Eric Leach"));
+        bookItems.add(new AudioBooksOption("The Return of Sherlock Holmes","Run Time: 11:51:17","Sir Arthur Conan Doyle","Narrated by David Clarke"));
+        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","Narrated by LibriVox Volunteers"));
+
         //Creates a MenuAdapter which adapts an ArrayAdapter to contain a list of MenuOptions (1 ImageView, 1 TextView)
         AudioBookArrayAdapter bookMenu = new AudioBookArrayAdapter(this, bookItems);
+
+        //Figure out how to make a list clickable
+        ListView l = (ListView) findViewById(R.id.list);
+        l.setAdapter(bookMenu);
 
 
     }

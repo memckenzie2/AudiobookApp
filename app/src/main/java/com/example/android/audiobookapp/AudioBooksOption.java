@@ -51,7 +51,7 @@ public class AudioBooksOption {
         return addedToBookshelf;
     }
 
-    public void setAddedToBookshelf(Boolean addedToBookshelf) {
-        this.addedToBookshelf = addedToBookshelf;
+    public void setAddedToBookshelf(Boolean addedBookshelf) {
+        this.addedToBookshelf = addedBookshelf;
     }
 }

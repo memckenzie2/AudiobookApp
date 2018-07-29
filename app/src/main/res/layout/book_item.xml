@@ -7,31 +7,42 @@
     android:background="@color/colorSecondary">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/bookTitle"
+        style="@style/emphasisText"
+        android:layout_width="match_parent"
         android:layout_alignParentTop="true"
         android:layout_marginTop="0dp"
+        android:background="@color/colorPrimaryLight"
+        android:paddingBottom="4dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
         android:text="Title"
-        android:textColor="@color/colorPrimary"
-        app:fontFamily="@font/crimson_text_bold"
-        style="@style/emphasisText" />
+        android:textColor="@color/textLight"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/crimson_text_bold" />
 
     <TextView
         android:id="@+id/author"
         style="@style/emphasisText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:layout_below="@id/bookTitle"
+        android:paddingLeft="8dp"
         android:text="Written by Author's Name"
-        android:textSize="14sp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/narrator"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/author"
+        android:paddingLeft="8dp"
         android:text="Narrated by Narrator's Name"
-        android:textSize="14sp"
-        app:fontFamily="@font/crimson_text_italic" />
+        android:textSize="16sp"
+        app:fontFamily="@font/crimson_text_italic"
+        android:paddingBottom="4dp"/>
 
     <TextView
         android:id="@+id/length"
@@ -39,10 +50,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignTop="@id/author"
+        android:paddingRight="8dp"
         android:text="Narration Length: 12:00:00"
-        android:textSize="14sp"
-        app:fontFamily="@font/crimson_text_italic" />
+        android:textSize="16sp"
+        app:fontFamily="@font/crimson_text_italic"
+        />
 
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/narrator"
+        android:background="?android:attr/listDivider"
+        android:visibility="visible" />
 
 
 </RelativeLayout>

@@ -1,10 +1,10 @@
 package com.example.android.audiobookapp;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         if (audioBookView == null) {
             //inflates view
             audioBookView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.option_list_item, parentView, false);
+                    R.layout.book_item, parentView, false);
         }
 
         // Get the AudioBooksOption object for the given position in the menu list
@@ -44,7 +44,7 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         // Find the TextView in the book_item.xml layout with the ID narrator.
         TextView narratorTextView = (TextView) audioBookView.findViewById(R.id.narrator);
         // Get the narrator text info and set is as the textView with ID narrator
-       narratorTextView.setText(currentBookItem.getNarrator());
+        narratorTextView.setText(currentBookItem.getNarrator());
 
         // Find the TextView in the book_item.xml layout with the ID title.
         TextView titleTextView = (TextView) audioBookView.findViewById(R.id.bookTitle);

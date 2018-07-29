@@ -5,20 +5,13 @@ The source code for that project can be found here: https://github.com/udacity/u
  */
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         l.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> p, View view, int position, long id) {
-                //FIND A WAY TO LOAD NEW LAYOUT
 
-                //Intent myIntent = new Intent(MainActivity.this, DiscoverActivity.class);
-                //MainActivity.this.startActivity(myIntent);
-
+                if (position==0) {
+                    Intent myIntent = new Intent(getBaseContext(), DiscoverActivity.class);
+                    startActivity(myIntent);
+                }
             }
         });
 

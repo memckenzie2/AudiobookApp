@@ -2,6 +2,9 @@ package com.example.android.audiobookapp;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class BookshelfActivity  extends AppCompatActivity  {
     @Override
@@ -9,6 +12,23 @@ public class BookshelfActivity  extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_list);
 
+
         //Loads Current List of AudioBooksOption Added to Reading List using the AudioBook Class
+
+        //Loads Current List of AudioBooksOption Available using the AudioBooksOption Class
+        //Create a list with all menu option items
+        ArrayList<AudioBooksOption> bookItems = new ArrayList<AudioBooksOption>();
+
+        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59","Sir Arthur Conan Doyle","LibriVox Volunteers"));
+        bookItems.add(new AudioBooksOption("The Memoirs of Sherlock Holmes","Run Time: 7:33:20","Sir Arthur Conan Doyle","Eric Leach"));
+        bookItems.add(new AudioBooksOption("The Return of Sherlock Holmes","Run Time: 11:51:17","Sir Arthur Conan Doyle","David Clarke"));
+
+
+        //Creates a MenuAdapter which adapts an ArrayAdapter to contain a list of MenuOptions (1 ImageView, 1 TextView)
+        AudioBookArrayAdapter bookMenu = new AudioBookArrayAdapter(this, bookItems);
+
+        //Figure out how to make a list clickable
+        ListView l = (ListView) findViewById(R.id.list);
+        l.setAdapter(bookMenu);
     }
 }
