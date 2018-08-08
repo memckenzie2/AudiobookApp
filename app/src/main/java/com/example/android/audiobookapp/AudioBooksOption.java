@@ -19,12 +19,12 @@ public class AudioBooksOption {
      * @param
      */
 
-    public AudioBooksOption(String titl, String bookLength, String auth, String narrat){
+    public AudioBooksOption(String titl, String bookLength, String auth, String narrat, Boolean bookshelf){
         title = titl;
         length = bookLength;
         author = auth;
         narrator = narrat;
-        addedToBookshelf = false;
+        addedToBookshelf = bookshelf;
     }
 
     /*Below are the "get" functions to retrieve the value for an audio.*/

@@ -15,6 +15,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static ArrayList<AudioBooksOption> bookItemsBookshelf;
+    private static AudioBooksOption currentBook;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,17 +46,62 @@ public class MainActivity extends AppCompatActivity {
         ListView l = (ListView) findViewById(R.id.menu_list);
         l.setAdapter(adapterMenu);
 
+
+        //Loads Current List of AudioBooksOption on bookshelf using the AudioBooksOption Class
+        //Create a list with all menu option items
+        bookItemsBookshelf = new ArrayList<AudioBooksOption>();
+
+        currentBook =  new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59 ","Sir Arthur Conan Doyle","LibriVox Volunteers", true);
+        //Add book items to bookshelf list
+        bookItemsBookshelf.add(currentBook);
+        bookItemsBookshelf.add(new AudioBooksOption("The Memoirs of Sherlock Holmes","Run Time: 7:33:20 ","Sir Arthur Conan Doyle","Narrated by Eric Leach",true));
+
+
+
+        //Creates a MenuAdapter which adapts an ArrayAdapter to contain a list of MenuOptions (1 ImageView, 1 TextView)
+        AudioBookArrayAdapter bookMenu = new AudioBookArrayAdapter(this, bookItemsBookshelf);
+
         l.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> p, View view, int position, long id) {
 
-                if (position==0) {
-                    Intent myIntent = new Intent(getBaseContext(), DiscoverActivity.class);
-                    startActivity(myIntent);
+                switch(position){
+                    case 0:
+                        Intent reading = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
+                        startActivity(reading);
+                        break;
+                    case 1:
+                        Intent bookshelf = new Intent(getBaseContext(), BookshelfActivity.class);
+                        startActivity(bookshelf);
+                        break;
+                    case 2:
+                        Intent discover = new Intent(getBaseContext(), DiscoverActivity.class);
+                        startActivity(discover);
+                        break;
+                    default:
+                        break;
+
                 }
+
+
+
             }
         });
+    }
 
+    public static ArrayList<AudioBooksOption> getBookMenu(){
+        return bookItemsBookshelf;
+    }
 
+    public static void setBookMenu(AudioBooksOption book){
+        bookItemsBookshelf.add(book);
+    }
+
+    public static AudioBooksOption getcurrentBook(){
+        return currentBook;
+    }
+
+    public static void setCurrentBook(AudioBooksOption book1){
+        currentBook = book1;
     }
 }

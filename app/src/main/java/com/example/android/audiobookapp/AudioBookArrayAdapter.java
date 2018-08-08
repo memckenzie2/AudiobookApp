@@ -1,10 +1,14 @@
 package com.example.android.audiobookapp;
 
 import android.content.Context;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -26,7 +30,7 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
     }
 
     @Override
-    public View getView(int audioBookPosition, View convertableView, ViewGroup parentView) {
+    public View getView(final int audioBookPosition, View convertableView, ViewGroup parentView) {
 
         View audioBookView = convertableView;
 
@@ -39,7 +43,7 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         }
 
         // Get the AudioBooksOption object for the given position in the menu list
-        AudioBooksOption currentBookItem = getItem(audioBookPosition);
+        final AudioBooksOption currentBookItem = getItem(audioBookPosition);
 
         // Find the TextView in the book_item.xml layout with the ID narrator.
         TextView narratorTextView = (TextView) audioBookView.findViewById(R.id.narrator);
@@ -47,7 +51,7 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         narratorTextView.setText(currentBookItem.getNarrator());
 
         // Find the TextView in the book_item.xml layout with the ID title.
-        TextView titleTextView = (TextView) audioBookView.findViewById(R.id.bookTitle);
+        TextView titleTextView = (TextView) audioBookView.findViewById(R.id.book_current);
         // Get the title text info and set is as the textView with ID title
         titleTextView.setText(currentBookItem.getTitle());
 
@@ -61,8 +65,31 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         // Get the length text info and set is as the textView with ID length
         lengthTextView.setText(currentBookItem.getLength());
 
-        // Return the whole audiobook list item (containing 4 TextViews) so that it can be shown in
+
+        //If the item is marked as being on the bookshelf, don't display an add to bookshelf button
+        if(currentBookItem.getAddedtoBookshelf() == true){
+            //Hide all the add to bookshelf buttons
+            Button addButton = (Button) audioBookView.findViewById(R.id.add_bookshelf);
+            addButton.setVisibility(View.GONE);
+        }
+
+        Button play = (Button)audioBookView.findViewById(R.id.play);
+
+        play.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                MainActivity.setCurrentBook(currentBookItem);
+                Intent reading = new Intent(getContext(), CurrentlyReadingActivity.class);
+                startActivity(reading);
+            }
+
+        });
+
+        // Return the whole audiobook list item (containing 4 TextViews and two buttons (with one set non-visible) so that it can be shown in
         // the ListView.
         return audioBookView;
     }
+
+
 }
