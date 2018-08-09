@@ -2,7 +2,11 @@ package com.example.android.audiobookapp;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +18,7 @@ import java.util.ArrayList;
 public class BookshelfActivity  extends AppCompatActivity  {
     ListView l;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,9 @@ public class BookshelfActivity  extends AppCompatActivity  {
         l = (ListView) findViewById(R.id.list);
         l.setAdapter(bookMenu);
 
+        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
+        bookshelfButton.setTextColor(getResources().getColor(android.R.color.white));
+
         Button home = (Button) findViewById(R.id.home_nav);
         home.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -56,15 +64,6 @@ public class BookshelfActivity  extends AppCompatActivity  {
             }
         });
 
-        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
-        bookshelfButton.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent bookshelfActivity = new Intent(getBaseContext(), BookshelfActivity.class);
-                startActivity(bookshelfActivity);
-            }
-        });
 
         Button discover = (Button) findViewById(R.id.discover_nav);
         discover.setOnClickListener(new Button.OnClickListener() {

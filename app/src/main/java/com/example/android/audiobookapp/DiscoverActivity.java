@@ -37,6 +37,9 @@ public class DiscoverActivity  extends AppCompatActivity {
         l = (ListView) findViewById(R.id.list);
         l.setAdapter(bookMenu);
 
+        Button discover = (Button) findViewById(R.id.discover_nav);
+        discover.setTextColor(getResources().getColor(android.R.color.white));
+
         Button home = (Button) findViewById(R.id.home_nav);
         home.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -67,15 +70,7 @@ public class DiscoverActivity  extends AppCompatActivity {
             }
         });
 
-        Button discover = (Button) findViewById(R.id.discover_nav);
-        discover.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent discoverActivity = new Intent(getBaseContext(), DiscoverActivity.class);
-                startActivity(discoverActivity);
-            }
-        });
 
     }
 

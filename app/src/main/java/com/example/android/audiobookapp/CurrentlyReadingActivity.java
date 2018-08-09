@@ -23,6 +23,9 @@ public class CurrentlyReadingActivity  extends AppCompatActivity {
         TextView narrator = (TextView) findViewById(R.id.narrator_current);
         narrator.setText(book.getAuthor());
 
+        Button current = (Button) findViewById(R.id.current_nav);
+        current.setTextColor(getResources().getColor(android.R.color.white));
+
         Button home = (Button) findViewById(R.id.home_nav);
         home.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -33,15 +36,6 @@ public class CurrentlyReadingActivity  extends AppCompatActivity {
             }
         });
 
-        Button current = (Button) findViewById(R.id.current_nav);
-        current.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent currentActivity = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
-                startActivity(currentActivity);
-            }
-        });
 
         Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
         bookshelfButton.setOnClickListener(new Button.OnClickListener() {
