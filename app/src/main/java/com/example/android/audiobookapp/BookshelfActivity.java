@@ -1,9 +1,11 @@
 package com.example.android.audiobookapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -16,8 +18,6 @@ public class BookshelfActivity  extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.book_list);
-
-
 
         //Loads Current List of AudioBooksOption Available using the AudioBooksOption Class
         //Create a list with all menu option items
@@ -35,6 +35,49 @@ public class BookshelfActivity  extends AppCompatActivity  {
         //Figure out how to make a list clickable
         l = (ListView) findViewById(R.id.list);
         l.setAdapter(bookMenu);
+
+        Button home = (Button) findViewById(R.id.home_nav);
+        home.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent homeActivity = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(homeActivity);
+            }
+        });
+
+        Button current = (Button) findViewById(R.id.current_nav);
+        current.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent currentActivity = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
+                startActivity(currentActivity);
+            }
+        });
+
+        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
+        bookshelfButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent bookshelfActivity = new Intent(getBaseContext(), BookshelfActivity.class);
+                startActivity(bookshelfActivity);
+            }
+        });
+
+        Button discover = (Button) findViewById(R.id.discover_nav);
+        discover.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent discoverActivity = new Intent(getBaseContext(), DiscoverActivity.class);
+                startActivity(discoverActivity);
+            }
+        });
+
+
+
     }
 
     public void onClickPlay(View view){

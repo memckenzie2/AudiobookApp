@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewParent;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -36,22 +37,47 @@ public class DiscoverActivity  extends AppCompatActivity {
         l = (ListView) findViewById(R.id.list);
         l.setAdapter(bookMenu);
 
+        Button home = (Button) findViewById(R.id.home_nav);
+        home.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent homeActivity = new Intent(getBaseContext(), MainActivity.class);
+                startActivity(homeActivity);
+            }
+        });
+
+        Button current = (Button) findViewById(R.id.current_nav);
+        current.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent currentActivity = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
+                startActivity(currentActivity);
+            }
+        });
+
+        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
+        bookshelfButton.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent bookshelfActivity = new Intent(getBaseContext(), BookshelfActivity.class);
+                startActivity(bookshelfActivity);
+            }
+        });
+
+        Button discover = (Button) findViewById(R.id.discover_nav);
+        discover.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent discoverActivity = new Intent(getBaseContext(), DiscoverActivity.class);
+                startActivity(discoverActivity);
+            }
+        });
+
     }
 
-    public void onClickPlay(View view){
-        int position = l.getPositionForView((View) view.getParent());
-        AudioBooksOption bookClicked = (AudioBooksOption) l.getItemAtPosition(position);
-        AudioBooksOption book = new AudioBooksOption(bookClicked.getTitle(),bookClicked.getLength(),bookClicked.getAuthor(),bookClicked.getNarrator(), true);
-        MainActivity.setCurrentBook(book);
-        Intent reading = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
-        startActivity(reading);
-    }
 
-    public void onClickBookshelf(View view){
-        int position = l.getPositionForView((View) view.getParent());
-        AudioBooksOption bookClicked = (AudioBooksOption) l.getItemAtPosition(position);
-        AudioBooksOption book = new AudioBooksOption(bookClicked.getTitle(),bookClicked.getLength(),bookClicked.getAuthor(),bookClicked.getNarrator(), true);
-        MainActivity.setBookMenu(book);
-        Toast.makeText(getApplicationContext(),"Added a Copy to Bookshelf", Toast.LENGTH_LONG).show();
-    }
 }

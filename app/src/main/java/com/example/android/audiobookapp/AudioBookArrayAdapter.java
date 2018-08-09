@@ -81,7 +81,20 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
             public void onClick(View v) {
                 MainActivity.setCurrentBook(currentBookItem);
                 Intent reading = new Intent(getContext(), CurrentlyReadingActivity.class);
-                startActivity(reading);
+                reading.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                getContext().startActivity(reading);
+            }
+
+        });
+
+        Button bookshelf = (Button)audioBookView.findViewById(R.id.add_bookshelf);
+
+        bookshelf.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                currentBookItem.setAddedToBookshelf(true);
+                MainActivity.setBookMenu(currentBookItem);
             }
 
         });
