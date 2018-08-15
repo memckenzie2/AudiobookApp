@@ -1,31 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/discoverLayout"
     style="@style/optionBar"
     android:background="@color/colorPrimary"
-    android:id="@+id/discoverLayout"
+    android:clickable="false"
     android:descendantFocusability="blocksDescendants"
     android:focusable="false"
-    android:focusableInTouchMode="false"
-    android:clickable="false">
+    android:focusableInTouchMode="false">
 
     <ImageView
         android:id="@+id/menu_image_view"
-        style="@style/mainOptionImage"
+        style="@style/menu_opt_image_item"
         app:srcCompat="@drawable/book_w_lamp_from_pixabay"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:clickable="false"
         />
 
     <TextView
         android:id="@+id/menu_text_view"
-        style="@style/mainOption"
+        style="@style/menu_opt_list_item"
         android:text="@string/discover"
         app:fontFamily="@font/crimson_text"
-        android:textIsSelectable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:clickable="false"
         />
 </LinearLayout>

@@ -16,55 +16,35 @@
 
         <Button
             android:id="@+id/home_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/book_stack_from_pixabay_nav"
-            android:text="Home"
-            android:textStyle="bold"
-            android:textSize="8sp"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/home" />
 
         <Button
             android:id="@+id/current_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/reading_from_pixabay_nav"
-            android:text="Currently Reading"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/currently_reading" />
 
         <Button
             android:id="@+id/shelf_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:background="@color/colorPrimary"
             android:drawableTop="@drawable/small_stack_from_pixabay_nav"
-            android:text="Bookshelf"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/bookshelf" />
 
         <Button
             android:id="@+id/discover_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/book_w_lamp_from_pixabay_nav"
-            android:text="Discover"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/discover" />
 
     </LinearLayout>
 
     <ListView
         android:id="@+id/list"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
 
 </LinearLayout>

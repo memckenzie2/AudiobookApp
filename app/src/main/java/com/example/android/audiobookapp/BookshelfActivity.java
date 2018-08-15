@@ -1,21 +1,17 @@
 package com.example.android.audiobookapp;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class BookshelfActivity  extends AppCompatActivity  {
+public class BookshelfActivity extends AppCompatActivity {
     ListView l;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -25,26 +21,22 @@ public class BookshelfActivity  extends AppCompatActivity  {
         setContentView(R.layout.book_list);
 
         //Loads Current List of AudioBooksOption Available using the AudioBooksOption Class
-        //Create a list with all menu option items
-        ArrayList<AudioBooksOption> bookItems = new ArrayList<AudioBooksOption>();
-
-        //Add book items to list
-        bookItems.add(new AudioBooksOption("The Adventures of Sherlock Holmes","Run Time: 10:17:59 ","Sir Arthur Conan Doyle","LibriVox Volunteers", true));
-        bookItems.add(new AudioBooksOption("The Memoirs of Sherlock Holmes","Run Time: 7:33:20 ","Sir Arthur Conan Doyle","Narrated by Eric Leach",true));
-        bookItems.add(new AudioBooksOption("The Return of Sherlock Holmes","Run Time: 11:51:17 ","Sir Arthur Conan Doyle","Narrated by David Clarke",true));
-
-
-        //Creates a MenuAdapter which adapts an ArrayAdapter to contain a list of MenuOptions (1 ImageView, 1 TextView)
+        /*Creates a MenuAdapter which adapts an ArrayAdapter to contain a list of AudiobookOptions (4 TextViews, 2 Buttons)
+        using the bookItemsBookshelf ArrayList contian the user's current list of audiobooks.*/
         AudioBookArrayAdapter bookMenu = new AudioBookArrayAdapter(this, MainActivity.getBookMenu());
 
-        //Figure out how to make a list clickable
-        l = (ListView) findViewById(R.id.list);
+        //Sets the ListView in book_list.xml to be the AudioBookArrayAdapter bookMenu.
+        l = findViewById(R.id.list);
         l.setAdapter(bookMenu);
 
-        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
+        /*Create a set of navigation buttons to be used in lieu of an Action Bar so user can navigate between activities*/
+
+        //Highlights the current activity in the navigation menu by setting it's background to white.
+        Button bookshelfButton = findViewById(R.id.shelf_nav);
         bookshelfButton.setTextColor(getResources().getColor(android.R.color.white));
 
-        Button home = (Button) findViewById(R.id.home_nav);
+        //Home button - launches the MainActivity when clicked
+        Button home = findViewById(R.id.home_nav);
         home.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +46,8 @@ public class BookshelfActivity  extends AppCompatActivity  {
             }
         });
 
-        Button current = (Button) findViewById(R.id.current_nav);
+        //Currently Reading button - launches the Currently Reading activity when clicked
+        Button current = findViewById(R.id.current_nav);
         current.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,7 +58,8 @@ public class BookshelfActivity  extends AppCompatActivity  {
         });
 
 
-        Button discover = (Button) findViewById(R.id.discover_nav);
+        //Discover button - launches the Discover activity when clicked
+        Button discover = findViewById(R.id.discover_nav);
         discover.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,15 +70,6 @@ public class BookshelfActivity  extends AppCompatActivity  {
         });
 
 
-
     }
 
-    public void onClickPlay(View view){
-        int position = l.getPositionForView((View) view.getParent());
-        AudioBooksOption bookClicked = (AudioBooksOption) l.getItemAtPosition(position);
-        AudioBooksOption book = new AudioBooksOption(bookClicked.getTitle(),bookClicked.getLength(),bookClicked.getAuthor(),bookClicked.getNarrator(), true);
-        MainActivity.setCurrentBook(book);
-        Intent reading = new Intent(getBaseContext(), CurrentlyReadingActivity.class);
-        startActivity(reading);
-    }
 }

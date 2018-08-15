@@ -1,8 +1,6 @@
 package com.example.android.audiobookapp;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +16,11 @@ The source code for that project can be found here: https://github.com/udacity/u
  */
 
 
-public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
+public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption> {
     /**
      * Create a new {AudioBookArrayAdapter} object.
      *
-     * @param context is the activity that the MenuArrayAdapter is bein created for/in.
+     * @param context   is the activity that the MenuArrayAdapter is bein created for/in.
      * @param audioBook is the list of audioBook list items to be displayed in the final list.
      */
     public AudioBookArrayAdapter(Context context, ArrayList<AudioBooksOption> audioBook) {
@@ -46,35 +44,37 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
         final AudioBooksOption currentBookItem = getItem(audioBookPosition);
 
         // Find the TextView in the book_item.xml layout with the ID narrator.
-        TextView narratorTextView = (TextView) audioBookView.findViewById(R.id.narrator);
+        TextView narratorTextView = audioBookView.findViewById(R.id.narrator);
         // Get the narrator text info and set is as the textView with ID narrator
         narratorTextView.setText(currentBookItem.getNarrator());
 
         // Find the TextView in the book_item.xml layout with the ID title.
-        TextView titleTextView = (TextView) audioBookView.findViewById(R.id.book_current);
+        TextView titleTextView = audioBookView.findViewById(R.id.book_current);
         // Get the title text info and set is as the textView with ID title
         titleTextView.setText(currentBookItem.getTitle());
 
         // Find the TextView in the book_item.xml layout with the ID author.
-        TextView authorTextView = (TextView) audioBookView.findViewById(R.id.author);
+        TextView authorTextView = audioBookView.findViewById(R.id.author);
         // Get the author text info and set is as the textView with ID author
         authorTextView.setText(currentBookItem.getAuthor());
 
         // Find the TextView in the book_item.xml layout with the ID length.
-        TextView lengthTextView = (TextView) audioBookView.findViewById(R.id.length);
+        TextView lengthTextView = audioBookView.findViewById(R.id.length);
         // Get the length text info and set is as the textView with ID length
         lengthTextView.setText(currentBookItem.getLength());
 
 
         //If the item is marked as being on the bookshelf, don't display an add to bookshelf button
-        if(currentBookItem.getAddedtoBookshelf() == true){
+        if (currentBookItem.getAddedtoBookshelf() == true) {
             //Hide all the add to bookshelf buttons
-            Button addButton = (Button) audioBookView.findViewById(R.id.add_bookshelf);
+            Button addButton = audioBookView.findViewById(R.id.add_bookshelf);
             addButton.setVisibility(View.GONE);
         }
 
-        Button play = (Button)audioBookView.findViewById(R.id.play);
+        //The "play" button that should launch the Currently Listening activity using the selected audiobook's data
+        Button play = audioBookView.findViewById(R.id.play);
 
+        //Set a listener that loads the selected audiobook's data in into MainActivity.currentlyReading and launches the Currently Reading activity.
         play.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -87,8 +87,11 @@ public class AudioBookArrayAdapter extends ArrayAdapter<AudioBooksOption>{
 
         });
 
-        Button bookshelf = (Button)audioBookView.findViewById(R.id.add_bookshelf);
 
+        //The "Add to Booksheld" button that when clicked adds the currently selected audiobook's data into the ArrayList containing all audiobooks on the user's Bookshelf
+        Button bookshelf = audioBookView.findViewById(R.id.add_bookshelf);
+
+        //Set a listener that loads the selected audiobook's data in into MainActivity.bookItemsBookshelf and marks the book as added to the booksehlf by changing the addedToBookshelf parameter to true
         bookshelf.setOnClickListener(new View.OnClickListener() {
 
             @Override

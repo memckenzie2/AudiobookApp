@@ -19,7 +19,7 @@ public class MenuArrayAdapter extends ArrayAdapter<MenuOption> {
      * Create a new {MenuArrayAdapter} object.
      *
      * @param context is the activity that the MenuArrayAdapter is bein created for/in.
-     * @param menuOpt is the list of menu option to be displayed in the final list.
+     * @param menuOpt is the list of menu option items to be displayed in the final list.
      */
     public MenuArrayAdapter(Context context, ArrayList<MenuOption> menuOpt) {
         super(context, 0, menuOpt);
@@ -42,15 +42,15 @@ public class MenuArrayAdapter extends ArrayAdapter<MenuOption> {
         MenuOption currentMenuItem = getItem(menuPosition);
 
         // Find the TextView in the option_list_item.xml layout with the ID menu_text_view.
-        TextView menuTextView = (TextView) menuItemView.findViewById(R.id.menu_text_view);
+        TextView menuTextView = menuItemView.findViewById(R.id.menu_text_view);
         // Get the menu option text and set is as the textView with ID menu_text_view
-       menuTextView.setText(currentMenuItem.getOptionTitle());
+        menuTextView.setText(currentMenuItem.getOptionTitle());
 
         // Find the ImageView in the option_list_item.xml layout with the ID menu_image_view.
-        ImageView menuImageView = (ImageView) menuItemView.findViewById(R.id.menu_image_view);
+        ImageView menuImageView = menuItemView.findViewById(R.id.menu_image_view);
 
         // Get the menu option image using the resource ID int  and set is as the imageView with ID menu_image_view
-       menuImageView.setImageResource(currentMenuItem.getOptionImage());
+        menuImageView.setImageResource(currentMenuItem.getOptionImage());
 
         // Return the whole option list item (containing 1 TextView and 1 image) so that it can be shown in
         // the ListView.

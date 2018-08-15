@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Audiobook App</string>
+    <string name="currently_reading">Currently Reading</string>
+    <string name="bookshelf">Bookshelf</string>
     <string name="discover">Discover</string>
+    <string name="home">Home</string>
+    <string name="title">Title</string>
+    <string name="written_by_author_s_name">Written by Author\'s Name</string>
+    <string name="narrated_by_narrator_s_name">Narrated by Narrator\'s Name</string>
+    <string name="narration_length_12_00_00">Narration Length: 12:00:00</string>
+    <string name="chapter_1">Chapter 1</string>
+    <string name="time_default">0:00</string>
 </resources>

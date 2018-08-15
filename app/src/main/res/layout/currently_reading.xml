@@ -17,98 +17,61 @@
 
         <Button
             android:id="@+id/home_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/book_stack_from_pixabay_nav"
-            android:text="Home"
-            android:textStyle="bold"
-            android:textSize="8sp"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/home" />
 
         <Button
             android:id="@+id/current_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/reading_from_pixabay_nav"
-            android:text="Currently Reading"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/currently_reading" />
 
         <Button
             android:id="@+id/shelf_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:background="@color/colorPrimary"
             android:drawableTop="@drawable/small_stack_from_pixabay_nav"
-            android:text="Bookshelf"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/bookshelf" />
 
         <Button
             android:id="@+id/discover_nav"
-            style="@style/menu_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            style="@style/nav_menu_opt"
             android:drawableTop="@drawable/book_w_lamp_from_pixabay_nav"
-            android:text="Discover"
-            android:textSize="8sp"
-            android:textStyle="bold"
-            android:gravity="center_horizontal|bottom"/>
+            android:text="@string/discover" />
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/book_current"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Book Title"
-        android:textAllCaps="true"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:fontFamily="@font/crimson_text" />
+        android:text="@string/title"
+        app:fontFamily="@font/crimson_text"
+        style="@style/title_reading" />
 
     <TextView
         android:id="@+id/author_current"
         style="@style/emphasisText"
         android:gravity="center"
-        android:text="TextView"
+        android:text="@string/written_by_author_s_name"
         app:fontFamily="@font/crimson_text_italic"/>
 
     <TextView
         android:id="@+id/narrator_current"
-        android:gravity="center"
-        android:text="TextView"
         style="@style/italicText"
+        android:gravity="center"
+        android:text="@string/narrated_by_narrator_s_name"
         app:fontFamily="@font/crimson_text_italic"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="384dp"
-        android:layout_height="176dp"
-        android:layout_margin="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:cropToPadding="false"
-        android:scaleType="fitCenter"
-        android:src="@drawable/book_cover_from_pixabay" />
+        android:src="@drawable/book_cover_from_pixabay"
+        style="@style/book_cover" />
 
     <TextView
         android:id="@+id/chapterNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chapter 1"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:fontFamily="@font/crimson_text" />
+        android:text="@string/chapter_1"
+        app:fontFamily="@font/crimson_text"
+        style="@style/chapter_reading" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -121,43 +84,28 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorSecondaryDark"
-            app:srcCompat="@android:drawable/ic_media_previous" />
+            app:srcCompat="@android:drawable/ic_media_previous"
+            style="@style/play_opt_button" />
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorSecondaryDark"
-            app:srcCompat="@android:drawable/ic_media_rew" />
+            app:srcCompat="@android:drawable/ic_media_rew"
+            style="@style/play_opt_button" />
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:background="@color/colorPrimaryLight"
-            app:srcCompat="@android:drawable/ic_media_play" />
+            app:srcCompat="@android:drawable/ic_media_play"
+            style="@style/press_play_opt_button" />
 
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorSecondaryDark"
-            app:srcCompat="@android:drawable/ic_media_ff" />
+            app:srcCompat="@android:drawable/ic_media_ff"
+            style="@style/play_opt_button" />
 
         <ImageView
             android:id="@+id/imageView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/colorSecondaryDark"
-            app:srcCompat="@android:drawable/ic_media_next" />
+            app:srcCompat="@android:drawable/ic_media_next"
+            style="@style/play_opt_button" />
 
     </LinearLayout>
 
@@ -168,11 +116,8 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="0:00"
-        android:textColor="@android:color/black"
-        app:fontFamily="@font/crimson_text" />
+        android:text="@string/time_default"
+        app:fontFamily="@font/crimson_text"
+        style="@style/time_reading" />
 
 </LinearLayout>

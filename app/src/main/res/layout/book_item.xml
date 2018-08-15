@@ -11,47 +11,28 @@
 
     <TextView
         android:id="@+id/book_current"
-        style="@style/emphasisText"
-        android:layout_width="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        android:background="@color/colorPrimaryLight"
-        android:paddingBottom="4dp"
-        android:paddingLeft="8dp"
-        android:paddingTop="8dp"
-        android:text="Title"
-        android:textColor="@color/textLight"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        style="@style/title_textview"
+        android:text="@string/title"
         app:fontFamily="@font/crimson_text_bold" />
 
     <TextView
         android:id="@+id/author"
         style="@style/emphasisText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/book_current"
-        android:paddingLeft="8dp"
-        android:text="Written by Author's Name"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:text="@string/written_by_author_s_name"
+        android:layout_below="@id/book_current"/>
 
     <TextView
         android:id="@+id/narrator"
-        android:text="Narrated by Narrator's Name"
-        android:layout_alignParentStart="true"
-        app:fontFamily="@font/crimson_text_italic"
         style="@style/italicText"
         android:layout_below= "@+id/author"
+        android:text="@string/narrated_by_narrator_s_name"
         tools:ignore="RtlCompat" />
 
     <TextView
         android:id="@+id/length"
-        app:fontFamily="@font/crimson_text_italic"
         style="@style/italicText"
-        android:layout_alignParentStart="true"
         android:layout_below="@+id/narrator"
-        android:text="Narration Length: 12:00:00"
+        android:text="@string/narration_length_12_00_00"
         tools:ignore="RtlCompat" />
 
 
@@ -59,48 +40,24 @@
 
     <Button
         android:id="@+id/play"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/book_current"
-        android:background="@android:drawable/picture_frame"
-        android:drawablePadding="2dp"
-        android:drawableTop="@android:drawable/ic_media_play"
-        android:gravity="bottom|center"
-        android:padding="4dp"
         android:text="Play\n"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="8sp"
-        android:textStyle="bold"
-        android:focusable="false"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"
+        style="@style/play_button" />
 
     <Button
         android:id="@+id/add_bookshelf"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
         android:layout_below="@+id/book_current"
         android:layout_toStartOf="@+id/play"
-        android:background="@android:drawable/picture_frame"
-        android:drawableTop="@android:drawable/ic_menu_add"
-        android:gravity="bottom|center"
-        android:padding="4dp"
         android:text="Bookshelf\n"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="8sp"
-        android:textStyle="bold"
-        android:focusable="false"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"
+        style="@style/add_book_button" />
 
     <View
         android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/length"
-        android:background="?android:attr/listDivider"
-        android:visibility="visible"
-        tools:ignore="RtlCompat" />
+        tools:ignore="RtlCompat"
+        style="@style/divider_style_element" />
 
 
 </RelativeLayout>

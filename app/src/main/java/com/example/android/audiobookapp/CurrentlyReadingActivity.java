@@ -7,26 +7,36 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class CurrentlyReadingActivity  extends AppCompatActivity {
+public class CurrentlyReadingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.currently_reading);
 
+        //Takes the data from MainActivity.currentBook and uses it to fill the textviews to display the audiobook's information
         AudioBooksOption book = MainActivity.getcurrentBook();
-        TextView title = (TextView) findViewById(R.id.book_current);
+
+        //Get the title TextView, title's string and set the title textview to it's string
+        TextView title = findViewById(R.id.book_current);
         title.setText(book.getTitle());
 
-        TextView author= (TextView) findViewById(R.id.author_current);
-        author.setText(book.getNarrator());
+        //Get the title TextView, title's string and set the title textview to it's string
+        TextView author = findViewById(R.id.author_current);
+        author.setText(book.getAuthor());
 
-        TextView narrator = (TextView) findViewById(R.id.narrator_current);
-        narrator.setText(book.getAuthor());
+        //Get the narrator's TextView, narrator's string and set the narrator's textview to it's string
+        TextView narrator = findViewById(R.id.narrator_current);
+        narrator.setText(book.getNarrator());
 
-        Button current = (Button) findViewById(R.id.current_nav);
+
+        /*Create a set of navigation buttons to be used in lieu of an Action Bar so user can navigate between activities*/
+
+        //Highlights the current activity in the navigation menu by setting it's background to white.
+        Button current = findViewById(R.id.current_nav);
         current.setTextColor(getResources().getColor(android.R.color.white));
 
-        Button home = (Button) findViewById(R.id.home_nav);
+        //Home button - launches the MainActivity when clicked
+        Button home = findViewById(R.id.home_nav);
         home.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,8 +46,8 @@ public class CurrentlyReadingActivity  extends AppCompatActivity {
             }
         });
 
-
-        Button bookshelfButton = (Button) findViewById(R.id.shelf_nav);
+        //Bookshelf button - launches the Bookshelf activity when clicked
+        Button bookshelfButton = findViewById(R.id.shelf_nav);
         bookshelfButton.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,7 +57,8 @@ public class CurrentlyReadingActivity  extends AppCompatActivity {
             }
         });
 
-        Button discover = (Button) findViewById(R.id.discover_nav);
+        //Discover button - launches the Discover activity when clicked
+        Button discover = findViewById(R.id.discover_nav);
         discover.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
