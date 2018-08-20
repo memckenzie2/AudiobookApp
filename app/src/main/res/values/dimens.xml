@@ -2,7 +2,7 @@
 <resources>
     <dimen name="main_title">24sp</dimen>
     <dimen name="med_text">16sp</dimen>
-    <dimen name="small_text">18sp</dimen>
+    <dimen name="small_text">10sp</dimen>
     <dimen name="tiny_padding">4dp</dimen>
     <dimen name="med_padding">8dp</dimen>
     <dimen name="button_width">70dp</dimen>
