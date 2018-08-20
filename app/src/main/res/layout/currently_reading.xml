@@ -12,7 +12,7 @@
         android:layout_height="88dp"
         android:background="@color/colorPrimary"
         android:orientation="horizontal"
-        android:paddingBottom="4dp">
+        android:paddingBottom="@dimen/tiny_padding">
 
 
         <Button
@@ -76,10 +76,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="@dimen/med_padding"
+        android:layout_marginLeft="@dimen/med_padding"
+        android:layout_marginRight="@dimen/med_padding"
+        android:layout_marginStart="@dimen/med_padding"
         android:orientation="horizontal">
 
         <ImageView

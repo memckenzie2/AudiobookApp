@@ -14,13 +14,13 @@
         <item name="android:gravity">center</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/textLight</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">@dimen/main_title</item>
         <item name="android:fontFamily">@font/crimson_text</item>
     </style>
 
     <style name="mainOptionImage">
-        <item name="android:layout_width">100dp</item>
-        <item name="android:layout_height">80dp</item>
+        <item name="android:layout_width">@dimen/image_width</item>
+        <item name="android:layout_height">@dimen/image_height</item>
         <item name="android:padding">8dp</item>
         <item name="android:scaleType">centerInside</item>
     </style>
@@ -30,8 +30,8 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingTop">@dimen/tiny_padding</item>
+        <item name="android:paddingBottom">@dimen/tiny_padding</item>
         <item name="android:clickable">true</item>
     </style>
 
@@ -39,24 +39,24 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">@font/crimson_text</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textSize">@dimen/med_text</item>
+        <item name="android:paddingLeft">@dimen/med_padding</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="italicText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:paddingBottom">4dp</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:paddingBottom">@dimen/tiny_padding</item>
+        <item name="android:paddingLeft">@dimen/med_padding</item>
+        <item name="android:textSize">@dimen/med_text</item>
         <item name="android:fontFamily">@font/crimson_text_italic</item>
     </style>
 
     <style name="menu_button">
-        <item name="android:layout_width">90dp</item>
-        <item name="android:layout_height">80dp</item>
-        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_width">@dimen/menu_width</item>
+        <item name="android:layout_height">@dimen/menu_height</item>
+        <item name="android:layout_margin">@dimen/med_padding</item>
         <item name="android:layout_weight">1</item>
         <item name="android:background">@color/colorPrimary</item>
     </style>
@@ -66,44 +66,44 @@
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:background">@color/colorPrimaryLight</item>
-        <item name="android:paddingBottom">4dp</item>
-        <item name="android:paddingLeft">8dp</item>
-        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">@dimen/tiny_padding</item>
+        <item name="android:paddingLeft">@dimen/med_padding</item>
+        <item name="android:paddingTop">@dimen/med_padding</item>
         <item name="android:textColor">@color/textLight</item>
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="play_button">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
         <item name="android:background">@android:drawable/picture_frame</item>
-        <item name="android:drawablePadding">2dp</item>
+        <item name="android:drawablePadding">@dimen/tiny_padding</item>
         <item name="android:drawableTop">@android:drawable/ic_media_play</item>
         <item name="android:focusable">false</item>
         <item name="android:gravity">bottom|center</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">@dimen/tiny_padding</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">@dimen/small_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="add_book_button">
-        <item name="android:layout_width">70dp</item>
-        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
         <item name="android:background">@android:drawable/picture_frame</item>
         <item name="android:drawableTop">@android:drawable/ic_menu_add</item>
         <item name="android:focusable">false</item>
         <item name="android:gravity">bottom|center</item>
-        <item name="android:padding">4dp</item>
+        <item name="android:padding">@dimen/tiny_padding</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">@dimen/small_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <style name="divider_style_element">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">4dp</item>
+        <item name="android:layout_height">@dimen/tiny_padding</item>
         <item name="android:layout_alignParentStart">true</item>
         <item name="android:layout_below">@+id/length</item>
         <item name="android:background">?android:attr/listDivider</item>
@@ -114,7 +114,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center_horizontal|bottom</item>
-        <item name="android:textSize">8sp</item>
+        <item name="android:textSize">@dimen/small_text</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -145,10 +145,10 @@
         <item name="android:layout_width">384dp</item>
         <item name="android:layout_height">176dp</item>
         <item name="android:layout_margin">16dp</item>
-        <item name="android:layout_marginEnd">8dp</item>
-        <item name="android:layout_marginLeft">8dp</item>
-        <item name="android:layout_marginRight">8dp</item>
-        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">@dimen/med_padding</item>
+        <item name="android:layout_marginLeft">@dimen/med_padding</item>
+        <item name="android:layout_marginRight">@dimen/med_padding</item>
+        <item name="android:layout_marginStart">@dimen/med_padding</item>
         <item name="android:cropToPadding">false</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
@@ -157,7 +157,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/med_text</item>
     </style>
 
     <style name="play_opt_button">

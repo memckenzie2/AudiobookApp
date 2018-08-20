@@ -35,9 +35,6 @@
         android:text="@string/narration_length_12_00_00"
         tools:ignore="RtlCompat" />
 
-
-        = />
-
     <Button
         android:id="@+id/play"
         android:layout_alignParentEnd="true"
